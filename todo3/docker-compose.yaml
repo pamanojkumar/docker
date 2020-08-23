@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  nodejs:
+    image: first-node-test
+    ports:
+      - 5003:8081
+    build:
+      context: ./todo1
+    volumes:
+      - ./todo1:/app 
+  
+  pythonapp:
+    image: py-flask-app
+    ports:
+      - 5004:5000
+    build:
+      context: ./todo2
